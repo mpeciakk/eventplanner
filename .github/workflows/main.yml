@@ -10,7 +10,6 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  SKIP_ENV_VALIDATION: 1
 
 jobs:
   build-and-push:
@@ -35,6 +34,8 @@ jobs:
       - name: Build and push docker image
         id: build-and-push
         uses: docker/build-push-action@v4
+        env:
+          SKIP_ENV_VALIDATION: 1
         with:
           context: "{{defaultContext}}"
           tags: ${{ steps.meta.outputs.tags }}
