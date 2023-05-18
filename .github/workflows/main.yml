@@ -10,7 +10,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  SKIP_ENV_VALIDATION: true
+  SKIP_ENV_VALIDATION: 1
 
 jobs:
   build-and-push:
