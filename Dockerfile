@@ -9,7 +9,7 @@ RUN npm ci
 RUN apk del make gcc g++ python3
 
 ENV NEXT_TELEMETRY_DISABLED 1
-
+ENV SKIP_ENV_VALIDATION 1
 RUN npm run build
 
 FROM node:18-alpine AS runner

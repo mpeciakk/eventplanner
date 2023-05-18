@@ -34,8 +34,6 @@ jobs:
       - name: Build and push docker image
         id: build-and-push
         uses: docker/build-push-action@v4
-        env:
-          SKIP_ENV_VALIDATION: 1
         with:
           context: "{{defaultContext}}"
           tags: ${{ steps.meta.outputs.tags }}
